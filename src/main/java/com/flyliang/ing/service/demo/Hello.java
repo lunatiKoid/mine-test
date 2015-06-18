@@ -169,7 +169,7 @@ public class Hello {
     public void recv_helloVoid() throws TException
     {
       helloVoid_result result = new helloVoid_result();
-      System.out.println("hello void");
+      //System.out.println("hello void");
       receiveBase(result, "helloVoid");
       return;
     }
