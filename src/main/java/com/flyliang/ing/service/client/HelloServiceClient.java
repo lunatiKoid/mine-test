@@ -1,5 +1,6 @@
 package com.flyliang.ing.service.client;
 
+import com.flyliang.ing.service.constants.ServerSettingConstants;
 import com.flyliang.ing.service.demo.Hello;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
@@ -10,10 +11,6 @@ import org.apache.thrift.transport.TTransportException;
 
 public class HelloServiceClient {
 
-    private static final Integer SERVER_PORT    = 7911;
-    private static final String  SERVER_ADDRESS = "localhost";
-    private static final Integer TIME_OUT       = 30000;
-
     /**
      * 调用 Hello 服务
      * 
@@ -22,8 +19,11 @@ public class HelloServiceClient {
     public static void main(String[] args) {
         try {
             // 设置调用的服务地址为本地
-            // TTransport transport = new TSocket(SERVER_ADDRESS, SERVER_PORT);
-            TTransport transport = new TSocket(SERVER_ADDRESS, SERVER_PORT, TIME_OUT);
+            TTransport transport = new TSocket(ServerSettingConstants.SERVER_ADDRESS,
+                                               ServerSettingConstants.SERVER_PORT);
+
+            // TTransport transport = new TSocket(ServerSettingConstants.SERVER_ADDRESS,
+            // ServerSettingConstants.SERVER_PORT, ServerSettingConstants.TIME_OUT);
 
             transport.open();
             // 设置传输协议为 TBinaryProtocol
