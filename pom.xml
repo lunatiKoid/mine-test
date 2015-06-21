@@ -41,7 +41,6 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-        <!-- test git diff | unstaged -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
